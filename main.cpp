@@ -56,7 +56,7 @@ void sellStock(user *Player) {
     string stockName = "";
     int quantity = 0;
     
-    cout << "Choose a stock and how much of it to tell!" << endl;
+    cout << "Choose a stock and how much of it to sell!" << endl;
 
     cin >> stockName >> quantity; 
 

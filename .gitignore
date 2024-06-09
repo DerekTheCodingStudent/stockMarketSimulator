@@ -1,4 +1,5 @@
 # ignores .o files
 *.o
 *.bin
+.vscode/
 personalNotes.txt
