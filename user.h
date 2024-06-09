@@ -6,7 +6,7 @@
 #include <string>
 #include <cstring>
 
-class stock;
+class stock; // need to forward declare so the program can break cicular dependency.
 
 using namespace std;
 

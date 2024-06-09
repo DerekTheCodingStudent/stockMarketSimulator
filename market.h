@@ -7,10 +7,7 @@
 #include <fstream>
 
 
-
 using namespace std;
-
-
 
 
 void callMarket();

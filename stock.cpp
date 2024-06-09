@@ -2,6 +2,8 @@
 #include "user.h"
 
 extern map<string, double> stockMarket;
+
+
 // Allows purchase of a stock.
 void buyStock(user *Player) {
     string stock = "";
@@ -42,7 +44,7 @@ void sellStock(user *Player) {
     if (quantity == 0) return;
 
     if (quantity > Player->portfolio[stockName]->getQuantity()) {
-        cout << "You choose a greater amount than the amount of stock you have!" << endl;
+        cout << "You choose a greater amount than the amount of stock you currently have!" << endl;
         return;
     }
 
@@ -51,6 +53,7 @@ void sellStock(user *Player) {
     Player->portfolio[stockName]->subtractStock(quantity);
 
     if(Player->portfolio[stockName]->getQuantity() == 0) {
+        delete(Player->portfolio[stockName]);
         Player->portfolio.erase(stockName);
     }
 }

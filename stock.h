@@ -6,7 +6,8 @@
 
 #include "market.h"
 
-class user;
+class user; // need to forward declare so the program can break cicular dependency.
+
 using namespace std;
 
 class stock {

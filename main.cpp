@@ -1,18 +1,23 @@
 #include "main.h"
 #include "stock.h"
-#include "user.h"
 
-extern map<string, double> stockMarket;
+
+void freeMemoryUsage(user *Player) {
+    for(auto& item : Player->portfolio) {
+        delete(item.second);
+    }
+    delete Player;
+}
 
 void menu() {
     cout << "What would you like to do today?" << endl;
+    cout << "0. Check how much money you have!" << endl;
     cout << "1. Look at the market" << endl;
     cout << "2. Buy a stock" << endl;
     cout << "3. Sell a stock" << endl;
     cout << "4. Look at your portfolio" << endl;
     cout << "9. Quit" << endl;
 }
-
 
 
 
@@ -25,11 +30,15 @@ int main(int argc, char *argv[]) {
     addStocksToMarket();
 
     while(true) {
+        
         menu();
         scanf("%d", &choice);
         getchar();
 
         switch(choice) {
+            case 0:
+                cout << "You currently have $" << BOBO->getMoney() << endl << endl;
+                break;
             case 1:
                 callMarket();
                 break;
@@ -43,17 +52,18 @@ int main(int argc, char *argv[]) {
                 lookAtPortfolio(BOBO);
                 break;
             case 9:
+                freeMemoryUsage(BOBO);
                 return false;
             case 42:
                 cout << "\033[2J\033[H"; // clears the terminal
                 break;
             default:
-                if(choice != 9 && (choice > 5 || choice <= 8)) {
+                if(choice != 9 && (choice >= 5 || choice <= 8)) {
                     cout << "That's not one of the choices!" << endl;
                 }
         }
     }
 
-    delete BOBO;
+    
     return 0;
 }
