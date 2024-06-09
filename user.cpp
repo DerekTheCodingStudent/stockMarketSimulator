@@ -1,4 +1,5 @@
 #include "user.h"
+#include "stock.h"
 
 // file is used to simulate a person
 
@@ -23,5 +24,17 @@ void addStockToPortfolio(user *Player, string name, double price, int quantity) 
         stock *newStock = new stock(quantity, price);
         Player->subtractMoney(quantity * price);
         Player->portfolio[name] = newStock;
+    }
+}
+
+// Bring up the Player's portfolio
+void lookAtPortfolio(user *Player) {
+    if (Player->portfolio.empty()) {
+        cout << "You don't have any stocks!" << endl;
+        return;
+    }
+
+    for(auto item : Player->portfolio) {
+        cout << "Stock name: " << item.first << " How much you have " << item.second->getQuantity() << endl;
     }
 }

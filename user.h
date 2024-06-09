@@ -1,10 +1,13 @@
 #ifndef USER_MAIN
 #define USER_MAIN
 
+#include <iostream>
 #include <map>
 #include <string>
 #include <cstring>
-#include "stock.h"
+
+class stock;
+
 using namespace std;
 
 class user {
@@ -34,5 +37,6 @@ class user {
 };
 
 void addStockToPortfolio(user *Player, string name, double price, int quantity);
+void lookAtPortfolio(user *Player);
 
 #endif

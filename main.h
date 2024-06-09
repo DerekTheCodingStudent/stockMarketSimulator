@@ -7,20 +7,7 @@ using namespace std;
 #include <fstream>
 #include <string>
 #include <map>
-#include <vector>
-
-#include "user.h"
-
 
 void menu();
-
-
-// should probably move this to their respective files sooner or later
-void buyStock(user *Player);
-void lookAtPortfolio(user *Player);
-void sellStock(user *Player);
-
-
-
 
 #endif

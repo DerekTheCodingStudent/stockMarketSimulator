@@ -1,7 +1,13 @@
 #ifndef STOCK_MAIN
 #define STOCK_MAIN
 
+#include <iostream>
+#include <string>
 
+#include "market.h"
+
+class user;
+using namespace std;
 
 class stock {
     private:
@@ -31,6 +37,9 @@ class stock {
             this->quantity -= quantity;
         }
 };
+
+void buyStock(user *Player);
+void sellStock(user *Player);
 
 
 #endif
