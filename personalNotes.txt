@@ -1,3 +1,0 @@
-
-Todo list:
-    1. Create a Selenium data scrapper program that scrapes data off the stock market.
