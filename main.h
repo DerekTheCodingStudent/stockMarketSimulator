@@ -16,9 +16,9 @@ void menu();
 
 
 // should probably move this to their respective files sooner or later
-void buyStock(user Player);
-void lookAtPortfolio();
-void sellStock();
+void buyStock(user *Player);
+void lookAtPortfolio(user *Player);
+void sellStock(user *Player);
 
 
 

@@ -10,7 +10,8 @@ class stock {
 
     public:
 
-        stock(double price) {
+        stock(double quantity, double price) {
+            this->quantity = quantity;
             this->price = price;
         }
 

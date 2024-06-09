@@ -25,10 +25,7 @@ void addStocksToMarket() {
         stockMarket[stockName] = price;
     }
 
-
     file.close();
-
-    callMarket();
 }
 
 

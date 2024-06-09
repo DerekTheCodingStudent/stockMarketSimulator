@@ -15,7 +15,7 @@ void menu() {
 
 
 // Should bring up a list of stocks and choose one to buy
-void buyStock(user Player) {
+void buyStock(user *Player) {
     string stock = "";
     callMarket();
 
@@ -23,11 +23,8 @@ void buyStock(user Player) {
 
     cin >> stock;
 
-    cout << "does this show the stock price?";
-    cout << stockMarket[stock] << endl;
-    printf("\n\n\n\n");
-    if (Player.getMoney() < stockMarket[stock]) {
-        cout << "Not enough money!" << endl;
+    if (Player->getMoney() < stockMarket[stock]) {
+        cout << "Not enough money! You have " << Player->getMoney() << endl;
         return;
     }
     
@@ -35,12 +32,14 @@ void buyStock(user Player) {
 }
 
 // Should bring up their portfolio
-void lookAtPortfolio() {
-
+void lookAtPortfolio(user *Player) {
+    for(auto item : Player->portfolio) {
+        cout << "Stock name: " << item.first << " How much you have " << item.second->getQuantity() << endl;
+    }
 }
 
 // Should bring up their portfolio and choose one (or a range) to sell
-void sellStock() {
+void sellStock(user *Player) {
 
 }
 
@@ -52,7 +51,7 @@ int main(int argc, char *argv[]) {
     cout << "Welcome to the stock market simulator!" << endl;
     int choice = 0;
     bool isLoop = true;
-    user BOBO(100.00); // the first player in the game :)
+    user *BOBO = new user(1000.00); // the first player in the game :)
     
     addStocksToMarket();
 
@@ -69,10 +68,10 @@ int main(int argc, char *argv[]) {
                 buyStock(BOBO);
                 break;
             case 3:
-                sellStock();
+                sellStock(BOBO);
                 break;
             case 4:
-                lookAtPortfolio();
+                lookAtPortfolio(BOBO);
                 break;
             case 9:
                 isLoop = false;
@@ -89,5 +88,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    delete BOBO;
     return 0;
 }

@@ -2,21 +2,28 @@
 
 // file is used to simulate a person
 
-// no clue if this works lol
-void addStockToPortfolio(user& Player, string name, double price) {
+/* Adds stock the Player's portfolio.
+*
+*
+*
+*
+*
+*/
+void addStockToPortfolio(user *Player, string name, double price) {
     bool isStockInPortfolio = false;
-    for(auto& item : Player.portfolio) {
+    for(auto& item : Player->portfolio) {
         if(item.first.compare(name) == 0) { // If the stock is already in the portfolio, then add
-            double quantity = Player.getMoney() / price;
-            Player.subtractMoney(quantity);
-            item.second.addStock(quantity);
+            double quantity = Player->getMoney() / price;
+            Player->subtractMoney(quantity * price);
+            item.second->addStock(quantity * price);
             isStockInPortfolio = true;
         }
     }
 
     if(!isStockInPortfolio) {
-        double quantity = Player.getMoney() / price;
-        Player.subtractMoney(quantity);
-        Player.portfolio[name] = quantity;
+        double quantity = Player->getMoney() / price;
+        stock *newStock = new stock(quantity, price);
+        Player->subtractMoney(quantity * price);
+        Player->portfolio[name] = newStock;
     }
 }

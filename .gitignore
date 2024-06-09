@@ -1,3 +1,4 @@
 # ignores .o files
 *.o
+*.bin
 personalNotes.txt

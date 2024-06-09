@@ -13,7 +13,7 @@ class user {
         
 
     public:
-        map<string, stock> portfolio;
+        map<string, stock*> portfolio;
 
 
         user(int money) {
@@ -34,6 +34,6 @@ class user {
 
 };
 
-void addStockToPortfolio(user& Player, string name, double price);
+void addStockToPortfolio(user *Player, string name, double price);
 
 #endif
