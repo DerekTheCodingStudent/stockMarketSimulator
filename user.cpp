@@ -2,7 +2,7 @@
 
 // file is used to simulate a person
 
-/* Adds stock the Player's portfolio.
+/* Adds a stock the Player's portfolio.
 *
 *
 *
