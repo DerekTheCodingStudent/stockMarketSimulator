@@ -9,11 +9,10 @@
 *
 *
 */
-void addStockToPortfolio(user *Player, string name, double price) {
+void addStockToPortfolio(user *Player, string name, double price, int quantity) {
     bool isStockInPortfolio = false;
     for(auto& item : Player->portfolio) {
         if(item.first.compare(name) == 0) { // If the stock is already in the portfolio, then add
-            double quantity = Player->getMoney() / price;
             Player->subtractMoney(quantity * price);
             item.second->addStock(quantity * price);
             isStockInPortfolio = true;
@@ -21,7 +20,6 @@ void addStockToPortfolio(user *Player, string name, double price) {
     }
 
     if(!isStockInPortfolio) {
-        double quantity = Player->getMoney() / price;
         stock *newStock = new stock(quantity, price);
         Player->subtractMoney(quantity * price);
         Player->portfolio[name] = newStock;

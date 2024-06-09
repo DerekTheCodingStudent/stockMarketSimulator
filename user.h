@@ -11,7 +11,6 @@ class user {
     private:
         double money;
         
-
     public:
         map<string, stock*> portfolio;
 
@@ -34,6 +33,6 @@ class user {
 
 };
 
-void addStockToPortfolio(user *Player, string name, double price);
+void addStockToPortfolio(user *Player, string name, double price, int quantity);
 
 #endif

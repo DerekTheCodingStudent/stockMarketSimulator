@@ -26,6 +26,10 @@ class stock {
         void addStock(double quantity) {
             this->quantity += quantity;
         }
+
+        void subtractStock(double quantity) {
+            this->quantity -= quantity;
+        }
 };
 
 
