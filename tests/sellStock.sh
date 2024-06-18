@@ -10,5 +10,6 @@ make clean && make
 4
 3 AMZN 184.3 3
 0
+4
 9
 EOF

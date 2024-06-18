@@ -44,8 +44,8 @@ class stock {
             double moneyBack = 0.0;
             // If whatever quantity is in the portfolio is greater then the requested amount,
             // sell the stock by the price. 
-            // If it's less, then sell x amount in the portfolio and erase it's entry in the map.
-            if(portfolio[name][price] >= quantity) {
+            // If it's less than or equal to, then sell x amount in the portfolio and erase it's entry in the map.
+            if(portfolio[name][price] > quantity) {
                 moneyBack = portfolio[name][price] * price;
                 portfolio[name][price] -= quantity;
             } else {
@@ -57,6 +57,11 @@ class stock {
         }
 
         void lookAtPortfolio() {
+            if(portfolio.empty()) {
+                cout << "There's nothing in your portfolio!" << endl;
+                return;
+            }
+
             for(auto n : portfolio) {
                 cout << n.first << " ";
 

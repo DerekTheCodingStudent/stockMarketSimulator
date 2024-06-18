@@ -48,4 +48,12 @@ What would you like to do today?
 3. Sell a stock
 4. Look at your portfolio
 9. Quit
-time taken = 0.0009109
+There's nothing in your portfolio!
+What would you like to do today?
+0. Check how much money you have!
+1. Look at the market
+2. Buy a stock
+3. Sell a stock
+4. Look at your portfolio
+9. Quit
+time taken = 0.0006199
