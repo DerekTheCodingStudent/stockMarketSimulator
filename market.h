@@ -11,6 +11,6 @@ using namespace std;
 
 
 void callMarket();
-void addStocksToMarket();
+void openMarket();
 
 #endif

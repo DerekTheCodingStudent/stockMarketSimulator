@@ -15,7 +15,7 @@ void callMarket() {
     printf("\n");
 }
 
-void addStocksToMarket() {
+void openMarket() {
     ifstream file("stocks.txt");
     
     string stockName = "";

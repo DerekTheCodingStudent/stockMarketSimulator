@@ -6,7 +6,7 @@
 #include <string>
 #include <cstring>
 
-class stock; // need to forward declare so the program can break cicular dependency.
+#include "stock.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ class user {
         double money;
         
     public:
-        map<string, stock*> portfolio;
+        stock portfolio;
 
 
         user(int money) {

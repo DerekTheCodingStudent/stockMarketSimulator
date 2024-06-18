@@ -1,0 +1,51 @@
+Welcome to the stock market simulator!
+What would you like to do today?
+0. Check how much money you have!
+1. Look at the market
+2. Buy a stock
+3. Sell a stock
+4. Look at your portfolio
+9. Quit
+Stock name: AMZN, Price: 184.3
+Stock name: APPL, Price: 196.89
+Stock name: GOOGL, Price: 174.45
+Stock name: META, Price: 492.96
+Stock name: MSFT, Price: 423.85
+Stock name: VOO, Price: 490.8
+
+Choose a stock name!
+How many stocks in AMZN do you want to purchase? You have: $1000
+What would you like to do today?
+0. Check how much money you have!
+1. Look at the market
+2. Buy a stock
+3. Sell a stock
+4. Look at your portfolio
+9. Quit
+AMZN price: 184.3 quantity: 3
+What would you like to do today?
+0. Check how much money you have!
+1. Look at the market
+2. Buy a stock
+3. Sell a stock
+4. Look at your portfolio
+9. Quit
+AMZN price: 184.3 quantity: 3
+Choose a stock, it's price, and it's quantity to sell!
+What would you like to do today?
+0. Check how much money you have!
+1. Look at the market
+2. Buy a stock
+3. Sell a stock
+4. Look at your portfolio
+9. Quit
+You currently have $1000
+
+What would you like to do today?
+0. Check how much money you have!
+1. Look at the market
+2. Buy a stock
+3. Sell a stock
+4. Look at your portfolio
+9. Quit
+time taken = 0.0009109

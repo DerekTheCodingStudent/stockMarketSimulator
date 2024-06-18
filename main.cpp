@@ -1,13 +1,7 @@
 #include "main.h"
 #include "stock.h"
+#include <chrono>
 
-
-void freeMemoryUsage(user *Player) {
-    for(auto& item : Player->portfolio) {
-        delete(item.second);
-    }
-    delete Player;
-}
 
 void menu() {
     cout << "What would you like to do today?" << endl;
@@ -19,18 +13,21 @@ void menu() {
     cout << "9. Quit" << endl;
 }
 
+void freeMemoryUsage(user *Player) {
+    delete Player;
+}
 
 
 int main(int argc, char *argv[]) {
+    auto start = chrono::high_resolution_clock::now();
     cout << "Welcome to the stock market simulator!" << endl;
     int choice = 0;
     
     user *BOBO = new user(1000.00); // the first player in the game :)
     
-    addStocksToMarket();
+    openMarket();
 
     while(true) {
-        
         menu();
         scanf("%d", &choice);
         getchar();
@@ -51,9 +48,6 @@ int main(int argc, char *argv[]) {
             case 4:
                 lookAtPortfolio(BOBO);
                 break;
-            case 9:
-                freeMemoryUsage(BOBO);
-                return false;
             case 42:
                 cout << "\033[2J\033[H"; // clears the terminal
                 break;
@@ -61,9 +55,12 @@ int main(int argc, char *argv[]) {
                 if(choice != 9 && (choice >= 5 || choice <= 8)) {
                     cout << "That's not one of the choices!" << endl;
                 }
+            case 9:
+                freeMemoryUsage(BOBO);
+                auto end = chrono::high_resolution_clock::now();
+                chrono::duration<double> dur = end - start;
+                cout << "time taken = " << dur.count() << endl;
+                return 0;
         }
     }
-
-    
-    return 0;
 }
