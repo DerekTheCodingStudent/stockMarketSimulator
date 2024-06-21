@@ -1,5 +1,6 @@
 #include "market.h"
 #include "stock.h"
+#include "json11.hpp"
 
 // file is used to simulate the market
 
@@ -16,13 +17,18 @@ void callMarket() {
 }
 
 void openMarket() {
-    ifstream file("stocks.txt");
-    
-    string stockName = "";
-    double price = 0.0;
+    ifstream file("stockdata.json");
+    string jsonContent((istreambuf_iterator<char>(file)), 
+                        istreambuf_iterator<char>());
 
-    while(file >> stockName >> price) {
-        stockMarket[stockName] = price;
+    string stock = "";
+    const auto j = json11::Json::parse(jsonContent, stock);
+    
+
+    for(auto& item : j.array_items()) {
+        string sym = item["symbol"].string_value();
+        double price = stod(item["price"].string_value());
+        stockMarket[sym] = price;
     }
 
     file.close();

@@ -1,0 +1,26 @@
+[
+    {
+        "symbol": "VOO",
+        "price": "501.78"
+    },
+    {
+        "symbol": "GOOG",
+        "price": "180.26"
+    },
+    {
+        "symbol": "AAPL",
+        "price": "207.49"
+    },
+    {
+        "symbol": "MSFT",
+        "price": "427.86"
+    },
+    {
+        "symbol": "AMZN",
+        "price": "189.08"
+    },
+    {
+        "symbol": "META",
+        "price": "494.78"
+    }
+]
