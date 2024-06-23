@@ -10,6 +10,7 @@ void menu() {
     cout << "2. Buy a stock" << endl;
     cout << "3. Sell a stock" << endl;
     cout << "4. Look at your portfolio" << endl;
+    cout << "5. Create an event to spur up the market!" << endl;
     cout << "9. Quit" << endl;
 }
 
@@ -26,7 +27,7 @@ int main(int argc, char *argv[]) {
     user *BOBO = new user(1000.00); // the first player in the game :)
     
     openMarket();
-
+                
     while(true) {
         menu();
         scanf("%d", &choice);
@@ -47,6 +48,9 @@ int main(int argc, char *argv[]) {
                 break;
             case 4:
                 lookAtPortfolio(BOBO);
+                break;
+            case 5:
+                callEvent(100, 100);
                 break;
             case 42:
                 cout << "\033[2J\033[H"; // clears the terminal

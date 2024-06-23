@@ -6,6 +6,8 @@
 #include <deque>
 #include "market.h"
 
+extern map<string, double> stockMarket;
+
 class user; // need to forward declare so the program can break cicular dependency.
 
 using namespace std;
@@ -46,7 +48,7 @@ class stock {
             // sell the stock by the price. 
             // If it's less than or equal to, then sell x amount in the portfolio and erase it's entry in the map.
             if(portfolio[name][price] > quantity) {
-                moneyBack = portfolio[name][price] * price;
+                moneyBack = stockMarket[name] - portfolio[name][price] * price;
                 portfolio[name][price] -= quantity;
             } else {
                 moneyBack = portfolio[name][price] * price;

@@ -7,7 +7,11 @@ using namespace std;
 #include <fstream>
 #include <string>
 #include <map>
+
 #include "user.h"
+#include "event.h"
+
+
 void menu();
 void freeMemoryUsage(user *Player);
 
